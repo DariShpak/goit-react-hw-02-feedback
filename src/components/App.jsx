@@ -1,11 +1,11 @@
-import FeedbackButtons from "./Feedback/Feedback";
+import Feedback from "./Feedback/Feedback";
 
 
 
 export const App = () => {
   return (
     <div>
-      <FeedbackButtons />
+      <Feedback />
     </div>
 
 
