@@ -32,8 +32,7 @@ export const Button = styled.button`
   margin-right: 15px;
   padding: 8px;
 
-  &:hover,
-  &:focus {
+  &:hover {
     border: 2px solid #2e2f42;
     color: #2e2f42;
   }
