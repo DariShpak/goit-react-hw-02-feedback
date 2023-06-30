@@ -1,8 +1,9 @@
 import React from "react"
 import Statistics from "./Feedback/Statistics/Statistics"
 import FeedbackOptions from "./Feedback/FeedbackOptions/FeedbackOptions"
+import Section from "./Feedback/Section/Section"
+import NotificationMessage from "./Feedback/Statistics/NotificationMessage"
 import {Container} from "./Feedback/Feedback.styled"
-
 
 class App extends React.Component {
   state = {
@@ -35,22 +36,24 @@ class App extends React.Component {
 
     return (
       <Container>
-        {
+        <Section title="please rate our service">
           <FeedbackOptions
             options={Object.keys(this.state)}
             onLeaveFeedback={this.onLeaveFeedback}
           />
-        }
+        </Section>
 
-        {
-          <Statistics
-            good={good}
-            neutral={neutral}
-            bad={bad}
-            total={totalFeedback}
-            positivePercentage={positiveFeedback}
-          />
-        }
+        <Section title="Statistics">
+          {totalFeedback === 0
+            ? <NotificationMessage message={"There is no feedback yet"} />
+            : <Statistics
+                good={good}
+                neutral={neutral}
+                bad={bad}
+                total={totalFeedback}
+                positivePercentage={positiveFeedback}
+              />}
+        </Section>
       </Container>
     )
   }
