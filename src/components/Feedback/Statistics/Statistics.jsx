@@ -1,28 +1,27 @@
 import React from "react"
 import PropTypes from "prop-types"
-import {StatsWrapper, Subtitle, StatsList, Item} from "./Stats.styled"
+import {StatsList, Item} from "./Stats.styled"
 
 const Statistics = ({good, neutral, bad, total, positivePercentage}) => {
-  return <StatsWrapper>
-      <Subtitle>Statistics</Subtitle>
-      <StatsList>
-        <Item>
-          Good: {good}
-        </Item>
-        <Item>
-          Neutral: {neutral}
-        </Item>
-        <Item>
-          Bad: {bad}
-        </Item>
-        <Item>
-          Total: {total}
-        </Item>
-        <Item>
-          Positive feedback: {positivePercentage}%
-        </Item>
-      </StatsList>
-    </StatsWrapper>
+  return (
+    <StatsList>
+      <Item>
+        Good: {good}
+      </Item>
+      <Item>
+        Neutral: {neutral}
+      </Item>
+      <Item>
+        Bad: {bad}
+      </Item>
+      <Item>
+        Total: {total}
+      </Item>
+      <Item>
+        Positive feedback: {positivePercentage}%
+      </Item>
+    </StatsList>
+  )
 }
 
 Statistics.propTypes = {
@@ -33,4 +32,4 @@ Statistics.propTypes = {
   positivePercentage: PropTypes.number.isRequired
 }
 
-export default Statistics;
+export default Statistics
